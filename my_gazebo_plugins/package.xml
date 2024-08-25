@@ -1,0 +1,19 @@
+<package format="2">
+
+  <name>my_gazebo_plugins</name>
+  <version>0.0.1</version>
+  <description>The my_gazebo_plugin package</description>
+  <maintainer email="you@example.com">Your Name</maintainer>
+  <license>Apache 2.0</license>
+
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+	<depend>gazebo</depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+  
+  
+</package>
+

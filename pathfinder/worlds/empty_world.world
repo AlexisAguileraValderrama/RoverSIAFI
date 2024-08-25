@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="empty_world">
+  
+      <include>
+      <uri>model://sun</uri>
+    </include>
+
+  <!-- Plugin para poder tener informacion general de los modelos -->
+    <plugin name="gazebo_ros_state" filename="libgazebo_ros_state.so">
+      <ros>
+
+      </ros>
+      <update_rate>1.0</update_rate>
+    </plugin>
+  
+    <!-- Define the world properties -->
+    <physics type="ode">
+      <gravity>0 0 -9.81</gravity>
+      <!-- Esto marca la acelaracion del mundo, Ej: 5000 -> x5 pero por el entrenamiento puede bajar hasta x4 o x3 -->
+        <real_time_update_rate>5000</real_time_update_rate>
+  	<max_step_size>0.001</max_step_size>
+    </physics>
+
+  <include>
+    <uri>model://ground_plane</uri>
+  </include>
+  
+  <!-- Plugin personalizado para poder crear, eliminar y reposicionar objetos más rapido -->
+	<plugin name="simple_plugin" filename="libSimplePlugin.so"/>
+    
+  </world>
+</sdf>
